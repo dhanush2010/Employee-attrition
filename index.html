@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attrition Prediction</title>
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+    <h1>Employee Attrition Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="POST">
+        <!-- Age Input -->
+        <label for="Age">Age:</label><br>
+        <input type="number" id="Age" name="Age" required><br>
+
+        <!-- Business Travel Input -->
+        <label for="BusinessTravel">Business Travel:</label><br>
+        <select id="BusinessTravel" name="BusinessTravel" required>
+            <option value="Travel_Rarely">Travel_Rarely</option>
+            <option value="Travel_Frequently">Travel_Frequently</option>
+            <option value="Non-Travel">Non-Travel</option>
+        </select><br>
+
+        <!-- Job Satisfaction Input -->
+        <label for="JobSatisfaction">Job Satisfaction:</label><br>
+        <select id="JobSatisfaction" name="JobSatisfaction" required>
+            <option value="1">1 - Low</option>
+            <option value="2">2 - Medium</option>
+            <option value="3">3 - High</option>
+            <option value="4">4 - Very High</option>
+        </select><br>
+
+        <!-- Monthly Income Input -->
+        <label for="MonthlyIncome">Monthly Income:</label><br>
+        <input type="number" id="MonthlyIncome" name="MonthlyIncome" required><br>
+
+        <!-- Work-Life Balance Input -->
+        <label for="WorkLifeBalance">Work-Life Balance:</label><br>
+        <select id="WorkLifeBalance" name="WorkLifeBalance" required>
+            <option value="1">1 - Bad</option>
+            <option value="2">2 - Good</option>
+            <option value="3">3 - Better</option>
+            <option value="4">4 - Best</option>
+        </select><br>
+
+        <!-- Years At Company Input-->
+        <label>Years at Company: <input type="number" name="YearsAtCompany" required></label><br>
+
+        <!-- Years in Current Role Input -->
+        <label>Years in Current Role: <input type="number" name="YearsInCurrentRole" required></label><br>
+
+        <!-- Additional fields can be added similarly, like JobRole, Department, etc., depending on your model inputs -->
+
+        <!-- Submit Button -->
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

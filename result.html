@@ -1,0 +1,22 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Result</h2>
+        {% if prediction == 1 %}
+        <p>The employee is likely to leave.</p>
+        {% else %}
+        <p>The employee is not likely to leave.</p>
+        {% endif %}
+        <a href="/">Predict Again</a>
+    </div>
+</body>
+</html>
+
