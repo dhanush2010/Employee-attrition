@@ -36,8 +36,16 @@ def predict():
         'YearsInCurrentRole': float(request.form['YearsInCurrentRole'])
     }
 
-    # Convert to DataFrame for transformation
+    # Convert input to DataFrame
     df = pd.DataFrame([data])
+
+    # Handle missing columns
+    missing_columns = set(ss.feature_names_in_) - set(df.columns)
+    for col in missing_columns:
+        df[col] = 0  # Assign default value (e.g., 0)
+
+    # Align column order with scaler
+    df = df[ss.feature_names_in_]
 
     # Scale features using the loaded scaler
     features = ss.transform(df)
