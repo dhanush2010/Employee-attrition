@@ -30,8 +30,8 @@ def predict():
         'Age': float(request.form['Age']),
         'BusinessTravel': business_travel_map.get(request.form['BusinessTravel'], 0.0),
         'JobSatisfaction': float(request.form['JobSatisfaction']),
-        'MonthlyIncome': float(request.form['MonthlyIncome']),
         'WorkLifeBalance': float(request.form['WorkLifeBalance']),
+        'MonthlyIncome': float(request.form['MonthlyIncome']),
         'YearsAtCompany': float(request.form['YearsAtCompany']),
         'YearsInCurrentRole': float(request.form['YearsInCurrentRole'])
     }
